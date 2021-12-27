@@ -39,8 +39,8 @@ components:{
   width:1514px;
   height:157px;
   background-color: #fff;
-  margin:25px 0 40px 0;
-  box-shadow: 10px 10px 12px #eee;
+  margin:20px 0 15px 0;
+  box-shadow: 0px 6px 12px #eee,0 6px 10px 0 #eee;
 }
 .top{
   padding-top:5px;

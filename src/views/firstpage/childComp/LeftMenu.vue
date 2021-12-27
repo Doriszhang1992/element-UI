@@ -55,7 +55,7 @@ mounted(){
             padding:0;
         }
         .menu{
-          height:100vh;
+          height:calc(100vh - 102px);
           background-color: #f0f2f3;
         }
         .sdmenu{

@@ -1,17 +1,17 @@
 <template>
   <div class="email">
     <div class="user">
-    <input type="text" placeholder="用户名/邮箱">
+    <input type="text" placeholder="用户名/邮箱" v-model="usermail">
     <img src="~assets/img/user.png" alt="">
     </div>
  
 
     <div class="password">
-      <input type="password" placeholder="密码">
+      <input type="password" placeholder="密码" v-model="password">
        <img src="~assets/img/lock.png" alt="">
     </div>
     <div class="code">
-      <input type="text" placeholder="图形验证码">
+      <input type="text" placeholder="图形验证码" v-model="code">
        <img src="~assets/img/code.png" alt="">
     </div>
     <div class="check">
@@ -22,7 +22,7 @@
       <span> 记住密码</span>
       
     </div>
-    <button @click="loginClick">立即登录</button>
+    <button @click="loginClick" :disabled="!usermail|| !password || !code" >立即登录</button>
    
   </div>
 </template>
@@ -30,9 +30,18 @@
 <script>
 
 export default {
+  data(){
+    return{
+    usermail:'',
+    password:'',
+    code:''
+    }
+  },
 methods:{
   loginClick(){
-    this.$router.push('/homepage')
+  this.$router.push('/homepage')
+    //console.log(this.usermail)
+   
   }
 }
 }
@@ -116,8 +125,12 @@ button{
   color:#fff;
   font-weight:600;
    margin:40px 0 30px 0;
-   cursor: pointer;
+   cursor:pointer;
 }
 
+button:disabled{
+   cursor:not-allowed;
+   background-color: rgba(25,109,160,0.8);
+}
 
 </style>

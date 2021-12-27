@@ -7,6 +7,9 @@
    <top-title />
    <left-menu class="menu"/>
    <perforamnce class="performance"/>
+   <curve-chart class="curve-chart"/>
+   <pie-chart class="pie-chart"/>
+   <bar-chart class="bar-chart" />
   </div>
 </template>
 
@@ -14,11 +17,17 @@
 import TopTitle from './childComp/TopTitle.vue'
 import Perforamnce from './childComp/Performance.vue'
 import LeftMenu from './childComp/LeftMenu.vue'
+import CurveChart from './childComp/CurveChart.vue'
+import PieChart from './childComp/PieChart.vue'
+import BarChart from './childComp/BarChart.vue'
 export default {
 components:{
   TopTitle,
   Perforamnce,
-  LeftMenu
+  LeftMenu,
+  CurveChart,
+  PieChart,
+  BarChart
 }
 }
 </script>
@@ -28,7 +37,7 @@ components:{
  height:100vh;
  width:100%;
 background-color: #f0f7ff;
-
+overflow: hidden;
 }
 .bgc{
   height:20px;
@@ -44,12 +53,18 @@ background-color: #f0f7ff;
   background-color: #fff;
 }
 
-.performance{
+.performance,.curve-chart,.pie-chart{
   position: relative;
   right:-361px;
 }
+.bar-chart{
+   position: relative;
+    right:-1130px;
+    top:-280px;
+}
 .menu{
-  position: absolute;
- 
+  position:absolute;
+  left:0;
+  
 }
 </style>

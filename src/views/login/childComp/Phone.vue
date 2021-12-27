@@ -1,15 +1,15 @@
 <template>
   <div class="phone">
     <div class="user">
-    <input type="text" placeholder="手机号码">
+    <input type="text" placeholder="手机号码" v-model="phone">
     <img src="~assets/img/user.png" alt="">
     </div>
     <div class="message">
-      <input type="text" placeholder="短信验证码" >
+      <input type="text" placeholder="短信验证码" v-model="message">
        <button >获取</button>
     </div>
     <div class="code">
-      <input type="text" placeholder="图形验证码">
+      <input type="text" placeholder="图形验证码" v-model="code">
        <img src="~assets/img/code.png" alt="">
     </div>
     <div class="check">
@@ -20,12 +20,19 @@
       <span> 记住密码</span>
       
     </div>
-    <button class="button" @click="loginClick">立即登录</button>
+    <button class="button" @click="loginClick" :disabled="! phone|| !message || !code">立即登录</button>
   </div>
 </template>
 
 <script>
 export default {
+   data(){
+    return{
+    phone:'',
+    message:'',
+    code:''
+    }
+  },
 methods:{
   loginClick(){
     this.$router.push('/homepage')
@@ -127,6 +134,9 @@ input:focus{
    margin:40px 0 30px 0;
    cursor: pointer;
 }
-
+button:disabled{
+   cursor:not-allowed;
+   background-color: rgba(25,109,160,0.8);
+}
 
 </style>

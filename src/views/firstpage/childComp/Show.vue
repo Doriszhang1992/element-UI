@@ -26,9 +26,13 @@ methods:{
   color:#fff;
  margin:10px 35px;
  box-shadow: 6px 6px 8px #eee;
- 
+ cursor: pointer;
+ transition-duration: 1s;
 }
-
+.show:hover{
+  opacity:0.6;
+ color:yellow;
+}
 .top{
    font-size:22px;
    margin:15px auto 5px auto;

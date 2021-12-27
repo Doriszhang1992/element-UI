@@ -35,7 +35,7 @@ export default {
    width:502px;
   height:646px;
   background-color: #fff;
-  box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.3),0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius:15px;
   position:fixed;
   right:8.5%;
